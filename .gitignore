@@ -1,0 +1,22 @@
+# Executable
+pokedexcli
+
+# Logs
+repl.log
+*.log
+
+# macOS
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
