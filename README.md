@@ -1,78 +1,111 @@
-# Pokedex CLI
+# Pokedex CLI 🎮
 
-A command-line Pokedex application built in Go that uses the [PokeAPI](https://pokeapi.co/) to explore Pokemon locations and catch Pokemon.
+A feature-rich command-line Pokedex application built in Go that uses the [PokeAPI](https://pokeapi.co/) to explore Pokemon locations, catch Pokemon, and battle!
 
-## Features
+![Go Version](https://img.shields.io/badge/Go-1.23+-00ADD8?style=flat&logo=go)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-- 🗺️ Explore Pokemon world locations
-- 🔍 Search for Pokemon in different areas
-- ⚡ Catch Pokemon with probability-based mechanics
-- 📊 View detailed stats for caught Pokemon
-- 💾 Intelligent caching system for fast performance
-- 🧪 Unit tested
+## ✨ Features
 
-## Installation
+- 🗺️ **Explore Pokemon Locations** - Navigate through the Pokemon world
+- 🔍 **Search for Pokemon** - Find Pokemon in different areas
+- ⚡ **Catch Pokemon** - Probability-based catching with progress bars
+- 🎨 **ASCII Art** - Beautiful ASCII representations of Pokemon
+- ⚔️ **Battle System** - Fight wild Pokemon with your party
+- 👥 **Party System** - Build a team of up to 6 Pokemon
+- 💾 **Persistent Storage** - Auto-save your progress
+- 🎨 **Colored Output** - Beautiful terminal colors
+- ⬆️ **Command History** - Use arrow keys to navigate previous commands
+- 🧪 **Unit Tested** - Reliable and well-tested code
+
+## 📦 Installation
 ```bash
-git clone https://github.com/YOUR_USERNAME/pokedexcli.git
+# Clone the repository
+git clone https://github.com/peekdylan/pokedexcli.git
 cd pokedexcli
+
+# Install dependencies
+go mod download
+
+# Build the application
 go build
+
+# Run it!
 ./pokedexcli
 ```
 
-## Usage
+## 🎮 Usage
 
-### Commands
+### Available Commands
 
-- `help` - Display available commands
-- `map` - Show next 20 location areas
-- `mapb` - Show previous 20 location areas
-- `explore <location>` - List Pokemon in a specific area
-- `catch <pokemon>` - Attempt to catch a Pokemon
-- `inspect <pokemon>` - View details of a caught Pokemon
-- `pokedex` - List all caught Pokemon
-- `exit` - Exit the application
+| Command | Description |
+|---------|-------------|
+| `help` | Display available commands |
+| `map` | Show next 20 location areas |
+| `mapb` | Show previous 20 location areas |
+| `explore <location>` | List Pokemon in a specific area |
+| `catch <pokemon>` | Attempt to catch a Pokemon |
+| `inspect <pokemon>` | View details of a caught Pokemon |
+| `pokedex` | List all caught Pokemon |
+| `party` | View your party of Pokemon |
+| `addparty <pokemon>` | Add a Pokemon to your party |
+| `battle <pokemon>` | Battle a wild Pokemon |
+| `save` | Manually save your progress |
+| `exit` | Save and exit the application |
 
 ### Example Session
 ```
 Pokedex > map
-canalave-city-area
-eterna-city-area
-...
+📍 Location Areas:
+  • canalave-city-area
+  • eterna-city-area
+  ...
 
 Pokedex > explore canalave-city-area
-Exploring canalave-city-area...
-Found Pokemon:
- - tentacool
- - tentacruel
- ...
+🔍 Exploring canalave-city-area...
 
-Pokedex > catch tentacool
-Throwing a Pokeball at tentacool...
-tentacool was caught!
-
-Pokedex > inspect tentacool
-Name: tentacool
-Height: 9
-Weight: 455
-Stats:
-  -hp: 40
-  -attack: 40
+✨ Found Pokemon:
+  • tentacool
+  • tentacruel
   ...
-Types:
-  - water
-  - poison
 
-Pokedex > pokedex
-Your Pokedex:
- - tentacool
+Pokedex > catch pikachu
+🎯 Throwing a Pokeball at pikachu...
+[========================================] 100%
+✓ pikachu was caught!
+
+    ⢀⣠⣤⣤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⢀⣾⡿⠋⠀⠀⠈⠙⢷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⢸⡏⠀⠀⠀⠀⠀⠀⠀⢻⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⢸⡇⠀⣀⣀⠀⠀⣀⣀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⠘⣷⡀⠛⠛⠀⠀⠛⠛⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⠀⠘⢿⣦⣀⣀⣀⣀⣤⡾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠉⠛⠛⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+   You may now inspect it with the inspect command.
+
+Pokedex > addparty pikachu
+✓ Added pikachu to your party!
+
+Pokedex > battle charmander
+╔════════════════════════════════════════╗
+║          POKEMON BATTLE!             ║
+╚════════════════════════════════════════╝
+
+pikachu VS charmander
+...
 ```
 
-## Project Structure
+## 🏗️ Project Structure
 ```
 pokedexcli/
 ├── main.go              # Main application and command handlers
+├── battle.go            # Battle system logic
+├── storage.go           # Save/load functionality
+├── ascii.go             # ASCII art for Pokemon
 ├── repl.go              # Input cleaning utilities
 ├── repl_test.go         # Tests for input cleaning
+├── pokedex_save.json    # Auto-generated save file
 └── internal/
     ├── pokeapi/         # PokeAPI client
     │   └── pokeapi.go
@@ -81,24 +114,51 @@ pokedexcli/
         └── cache_test.go
 ```
 
-## Technical Details
+## 🛠️ Technical Details
+
+### Dependencies
+
+- **[fatih/color](https://github.com/fatih/color)** - Colored terminal output
+- **[schollz/progressbar](https://github.com/schollz/progressbar)** - Progress bars
+- **[eiannone/keyboard](https://github.com/eiannone/keyboard)** - Keyboard input handling
+
+### Architecture
 
 - **Language**: Go 1.23+
 - **API**: [PokeAPI v2](https://pokeapi.co/docs/v2)
 - **Concurrency**: Thread-safe caching with mutex locks
+- **Storage**: JSON-based persistence
 - **Testing**: Unit tests with table-driven test patterns
 
-## Learning Outcomes
+## 🧪 Running Tests
+```bash
+go test ./...
+```
 
-This project was built as part of [Boot.dev](https://boot.dev)'s curriculum and demonstrates:
+## 🎯 Learning Outcomes
 
-- Building CLI applications with Go
-- Making HTTP requests and parsing JSON
-- Implementing caching strategies
-- Thread-safe concurrent programming
-- Test-driven development
-- Clean architecture patterns
+This project demonstrates:
 
-## License
+- ✅ Building CLI applications with Go
+- ✅ Making HTTP requests and parsing JSON
+- ✅ Implementing caching strategies
+- ✅ Thread-safe concurrent programming
+- ✅ File I/O and data persistence
+- ✅ Test-driven development
+- ✅ Clean architecture patterns
+- ✅ Terminal UI/UX design
+- ✅ Game mechanics and probability systems
 
-MIT
+## 📝 License
+
+MIT License - feel free to use this project for learning!
+
+## 🙏 Acknowledgments
+
+- Built as part of [Boot.dev](https://boot.dev)'s curriculum
+- Pokemon data from [PokeAPI](https://pokeapi.co/)
+- ASCII art inspired by Pokemon sprites
+
+---
+
+**Gotta Code 'Em All!** 🚀

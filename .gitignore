@@ -1,6 +1,9 @@
 # Executable
 pokedexcli
 
+# Save files
+pokedex_save.json
+
 # Logs
 repl.log
 *.log
