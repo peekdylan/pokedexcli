@@ -2,6 +2,7 @@
 
 A feature-rich command-line Pokedex application built in Go that uses the [PokeAPI](https://pokeapi.co/) to explore Pokemon locations, catch Pokemon, and battle!
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/dylan-p-3b9297248)
 ![Go Version](https://img.shields.io/badge/Go-1.23+-00ADD8?style=flat&logo=go)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
